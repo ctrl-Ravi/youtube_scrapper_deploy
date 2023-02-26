@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from chromedriver_py import binary_path
 service_object = Service(binary_path)
+from flask_cors import CORS,cross_origin
 import logging
 from flask import Flask, render_template, request,jsonify
 from flask import Flask, send_file
@@ -14,10 +15,12 @@ logging.basicConfig(filename="scrapper.log" , level=logging.INFO)
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET'])
+@cross_origin()
 def homepage():
     return render_template("index.html")
 
 @app.route("/review" , methods = ['POST' , 'GET'])
+@cross_origin()
 def index():
     if request.method == 'POST':
         try:
@@ -72,6 +75,7 @@ def index():
 df = pd.read_csv('video_detail.csv')
 
 @app.route('/download', methods =['GET', 'POST'])
+@cross_origin()
 def download_csv():
     return send_file('video_detail.csv', mimetype='text/csv', as_attachment=True)
 

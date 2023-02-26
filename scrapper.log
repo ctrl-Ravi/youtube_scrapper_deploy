@@ -497,3 +497,4 @@ INFO:werkzeug:192.168.29.11 - - [27/Feb/2023 00:48:07] "GET /download HTTP/1.1" 
 INFO:werkzeug:192.168.29.11 - - [27/Feb/2023 00:48:13] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:192.168.29.11 - - [27/Feb/2023 00:48:13] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:192.168.29.11 - - [27/Feb/2023 00:48:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
